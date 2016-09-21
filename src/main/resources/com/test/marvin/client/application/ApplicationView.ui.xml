@@ -1,0 +1,206 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2016 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g='urn:import:com.google.gwt.user.client.ui'
+        xmlns:m="urn:import:gwt.material.design.client.ui"
+        xmlns:ma="urn:import:gwt.material.design.addins.client">
+    <ui:with field="res" type="com.test.marvin.client.resources.AppResources"/>
+    <ui:style>
+        @external side-nav;
+        body {
+            background-color: #d9d9d9;
+            overflow: auto !important;
+        }
+        .side-nav {
+            height: calc(100vh - 68px);
+        }
+        .textBlue{
+            color: dodgerblue;
+        }
+        .navHeight{
+            height: 100px !important;
+        }
+    </ui:style>
+    <m:MaterialPanel>
+        <m:MaterialHeader>
+            <m:MaterialNavBar shadow="1" addStyleNames="{style.navHeight}" type="FIXED" activates="mysidenav" backgroundColor="white">
+                <m:MaterialImage url="http://logok.org/wp-content/uploads/2014/08/YouTube_logo.png" width="150px" height="100px"/>
+                <m:MaterialNavSection marginTop="23" float="RIGHT" paddingRight="100">
+                    <m:MaterialLink textColor="black" text="Marvin Baldemor"/>
+                    <m:MaterialImage url="https://yt3.ggpht.com/-cEjgPonMdgg/AAAAAAAAAAI/AAAAAAAAAAA/n5PWnZah2i8/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" width="50px" height="50px" circle="true" marginRight="20"/>
+                </m:MaterialNavSection>
+            </m:MaterialNavBar>
+            <m:MaterialSideNav  m:id="mysidenav" margin="4" top="100" alwaysShowActivator="true" showOnAttach="true" backgroundColor="grey lighten-4" width="300" shadow="1" type="FIXED" >
+                <ma:subheader.MaterialSubHeader textColor="red" fontWeight="BOLD"  grid="l6 m6 s12" text="EXPLORE" backgroundColor="grey lighten-4"/>
+                <m:MaterialLink iconType="TV" text="What to watch"/>
+                <m:MaterialLink iconType="FLAG" text="Recommended"/>
+                <m:MaterialLink iconType="HISTORY" text="History"/>
+                <m:MaterialLink iconType="BOOKMARK" text="Subscriptions"/>
+                <ma:subheader.MaterialSubHeader textColor="red" fontWeight="BOLD" grid="l6 m6 s12" text="PLAYLISTS" backgroundColor="grey lighten-4"/>
+                <m:MaterialLink iconType="THUMB_UP" text="Liked Videos"/>
+                <m:MaterialLink iconType="FAVORITE" text="Favorites"/>
+                <m:MaterialLink iconType="QUERY_BUILDER" text="Watch Later"/>
+                <ma:subheader.MaterialSubHeader textColor="red" fontWeight="BOLD"  grid="l6 m6 s12" text="SUBSCRIPTION" backgroundColor="grey lighten-4"/>
+                <m:MaterialLink text="League Of Legens">
+                    <m:MaterialImage url="http://www.lolstreams.info/wp-content/uploads/2014/07/ikonica-lol.ico" width="50px" height="50px" circle="true" marginRight="20" float="LEFT"/>
+                </m:MaterialLink>
+                <m:MaterialLink text="All Time Low">
+                    <m:MaterialImage url="http://31.media.tumblr.com/tumblr_nlo2q03oNL1qzjykho1_1427117257_cover.jpg" width="50px" height="50px" circle="true" marginRight="20" float="LEFT"/>
+                </m:MaterialLink>
+            </m:MaterialSideNav>
+        </m:MaterialHeader>
+            <m:MaterialContainer paddingLeft="150" paddingTop="100">
+             <m:MaterialRow marginBottom="-137" paddingTop="20" >
+                 <m:MaterialColumn float="RIGHT" grid="l5 m12 s12" >
+                     <m:MaterialCard>
+                         <m:MaterialCardContent>
+                             <m:MaterialRow marginBottom="0">
+                                 <m:MaterialLabel fontSize="1.5em" fontWeight="BOLD" text="COMMENTS" float="LEFT"/>
+                             </m:MaterialRow>
+                             <m:MaterialRow marginBottom="0">
+                                 <m:MaterialColumn marginRight="-50" grid="l2 m12 s12">
+                                     <m:MaterialImage url="https://yt3.ggpht.com/-cEjgPonMdgg/AAAAAAAAAAI/AAAAAAAAAAA/n5PWnZah2i8/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" width="50px" height="50px" circle="true" marginRight="20"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn grid="l10 m12 s12">
+                                     <m:MaterialTextBox placeholder="Add a public comment..." length="50"/>
+                                 </m:MaterialColumn>
+                             </m:MaterialRow>
+                         </m:MaterialCardContent>
+                     </m:MaterialCard>
+                     <m:MaterialCard>
+                         <m:MaterialCardContent>
+                             <m:MaterialRow marginBottom="14">
+                                 <m:MaterialButton text="Top Comments" iconType="ARROW_DROP_DOWN" iconPosition="RIGHT" textColor="white" backgroundColor="red" activates="dp-comments" />
+                                 <m:MaterialDropDown  activator="dp-comments" constrainWidth="true">
+                                     <m:MaterialLink textColor="black" text="Top Comments"/>
+                                     <m:MaterialLink textColor="black" text="Newest first"/>
+                                 </m:MaterialDropDown>
+                             </m:MaterialRow>
+                             <m:MaterialRow marginBottom="0">
+                                 <m:MaterialColumn marginRight="-50" grid="l2 m12 s12">
+                                     <m:MaterialImage url="https://yt3.ggpht.com/-cEjgPonMdgg/AAAAAAAAAAI/AAAAAAAAAAA/n5PWnZah2i8/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" width="50px" height="50px" circle="true" marginRight="20"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" marginRight="-50" grid="l3 m12 s12">
+                                     <m:MaterialLink  textColor="black" text="Marvin Baldemor" fontWeight="BOLD" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l2 m12 s12">
+                                     <m:MaterialLabel textColor="grey" text="Sept 3, 2013" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l1 m12 s12">
+                                     <m:MaterialLink textColor="grey" text="Reply" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l1 m12 s12">
+                                     <m:MaterialLink iconColor="grey" iconType="THUMB_UP" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l1 m12 s12">
+                                     <m:MaterialLink iconColor="grey"  iconType="THUMB_DOWN" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                             </m:MaterialRow>
+                             <m:MaterialRow>
+                                 <m:MaterialColumn paddingTop="10" grid="l12 m12 s12">
+                                     <m:MaterialLabel text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                                 </m:MaterialColumn>
+                             </m:MaterialRow>
+                             <m:MaterialRow marginBottom="0">
+                                 <m:MaterialColumn marginRight="-50" grid="l2 m12 s12">
+                                     <m:MaterialImage url="https://yt3.ggpht.com/-cEjgPonMdgg/AAAAAAAAAAI/AAAAAAAAAAA/n5PWnZah2i8/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" width="50px" height="50px" circle="true" marginRight="20"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" marginRight="-50" grid="l3 m12 s12">
+                                     <m:MaterialLink  textColor="black" text="Marvin Baldemor" fontWeight="BOLD" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l2 m12 s12">
+                                     <m:MaterialLabel textColor="grey" text="Sept 3, 2013" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l1 m12 s12">
+                                     <m:MaterialLink textColor="grey" text="Reply" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l1 m12 s12">
+                                     <m:MaterialLink iconColor="grey" iconType="THUMB_UP" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                                 <m:MaterialColumn paddingTop="20" grid="l1 m12 s12">
+                                     <m:MaterialLink iconColor="grey"  iconType="THUMB_DOWN" fontSize="1em"/>
+                                 </m:MaterialColumn>
+                             </m:MaterialRow>
+                             <m:MaterialRow>
+                                 <m:MaterialColumn paddingTop="10" grid="l12 m12 s12">
+                                     <m:MaterialLabel text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                                 </m:MaterialColumn>
+                             </m:MaterialRow>
+                         </m:MaterialCardContent>
+                     </m:MaterialCard>
+                 </m:MaterialColumn>
+                <m:MaterialColumn grid="l6 m12 s12" offset="l1">
+                 <m:MaterialImage url="https://i.ytimg.com/vi/a1jfErakA7o/maxresdefault.jpg"/>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+            <m:MaterialRow marginBottom="0" paddingTop="0" >
+                <m:MaterialColumn grid="l6 m12 s12" offset="l1">
+                    <m:MaterialCard marginBottom="0">
+                        <m:MaterialCardContent>
+                            <m:MaterialRow marginBottom="0">
+                                <m:MaterialLabel fontSize="1.5em" fontWeight="BOLD" text="Fumes - The Eden Project (Official Lyric Video)" float="LEFT" marginTop="20"/>
+                                <m:MaterialLabel text="1,000,324 views" fontSize="1.5em" textColor="grey" float="RIGHT" marginTop="20" marginRight="20"/>
+                            </m:MaterialRow>
+                            <m:MaterialRow marginBottom="0">
+                                <m:MaterialColumn grid="l4 m8 s12">
+                                    <m:MaterialImage url="http://31.media.tumblr.com/tumblr_nlo2q03oNL1qzjykho1_1427117257_cover.jpg" width="50px" height="50px" circle="true" marginRight="20" float="LEFT"/>
+                                </m:MaterialColumn>
+                                <m:MaterialColumn  paddingTop="17" grid="l2 m6 s12">
+                                    <m:MaterialLink marginLeft="-230" textColor="black" fontWeight="BOLD" fontSize="1em" text="Koala Kontrol"/>
+                                </m:MaterialColumn>
+                            </m:MaterialRow>
+                            <m:MaterialRow marginTop="5" marginBottom="0">
+                                <m:MaterialColumn marginRight="-74" grid="l3 m6 s12">
+                                    <m:MaterialButton   waves="LIGHT" backgroundColor="red" textColor="white" text="Subscribe"/>
+                                </m:MaterialColumn>
+                                <m:MaterialColumn grid="l3 m6 s12">
+                                    <m:MaterialButton waves="LIGHT" enabled="false" textColor="white" text="294,552"/>
+                                </m:MaterialColumn>
+                            </m:MaterialRow>
+                        </m:MaterialCardContent>
+                        <m:MaterialCardAction>
+                            <m:MaterialLink iconType="ADD" text="Add" textColor="grey"/>
+                            <m:MaterialLink iconType="SHARE" text="Share" textColor="grey"/>
+                            <m:MaterialLink iconType="MORE" text="More" textColor="grey"/>
+                            <m:MaterialLink float="RIGHT" iconColor="grey" iconType="THUMB_DOWN" text="33" textColor="grey"/>
+                            <m:MaterialLink float="RIGHT" iconColor="blue" iconType="THUMB_UP" text="152,233"  textColor="grey"/>
+                        </m:MaterialCardAction>
+                    </m:MaterialCard>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+                <m:MaterialRow paddingTop="0">
+                    <m:MaterialColumn  grid="l6 m12 s12" offset="l1">
+                        <m:MaterialCard>
+                            <m:MaterialCardContent>
+                                <m:MaterialRow marginBottom="0">
+                                    <m:MaterialLabel fontSize="1em" fontWeight="BOLD" text="Published on December 4,2015" float="LEFT"/>
+                                </m:MaterialRow>
+                                <m:MaterialRow marginBottom="0">
+                                    <m:MaterialLabel fontSize="1.2em" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                                </m:MaterialRow>
+                            </m:MaterialCardContent>
+                        </m:MaterialCard>
+                    </m:MaterialColumn>
+                </m:MaterialRow>
+        </m:MaterialContainer>
+    </m:MaterialPanel>
+
+</ui:UiBinder>
